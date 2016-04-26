@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <title>Grocery Store</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script>
+
+	var cartSize= 0;
+	var applesNumber=0;
+	var banannaNumber=0;
+	var waterMelon=0;
+	var strawberryNumber=0;
+	var orangeNumber =0;
+
+function buttonApple() {
+	cartSize++;
+	applesNumber++;
+	document.getElementById("cart").innerHTML = "cart("+cartSize+")";
+}
+function buttonBananna() {
+	cartSize++;
+	banannaNumber++;
+	document.getElementById("cart").innerHTML = "cart("+cartSize+")";
+}
+function buttonWatermelon() {
+	cartSize++;
+	watermelonNumber++;
+	document.getElementById("cart").innerHTML = "cart("+cartSize+")";
+}
+function buttonStrawberry() {
+	cartSize++;
+	strawberryNumber++;
+	document.getElementById("cart").innerHTML = "cart("+cartSize+")";
+}
+function buttonOrange() {
+	cartSize++;
+	orangeNumber++;
+	document.getElementById("cart").innerHTML = "cart("+cartSize+")";
+}
+</script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+					 <li>
+                        <a id="cart" href="#">cart</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <p class="lead">Shop Name</p>
+                <div class="list-group">
+                	<a href="#" class="list-group-item">Drinks</a>
+                	<a href="#" class="list-group-item">Fruits</a>
+              	  	<a href="#" class="list-group-item">Grains</a>
+              	  	<a href="#" class="list-group-item">Meats</a>
+              	  	<a href="#" class="list-group-item">Vegetables</a>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+
+                <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="slide-image" src="images/Slideshow/slideshow1.jpg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="images/Slideshow/slideshow2.png" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="images/Slideshow/slideshow2.png" alt="">
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="images/Apple.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$2.49/Pound</h4>
+                                <h4><a href="#">Apples</a>
+                                </h4>
+                                <p>Delicious Red Apples straight from the ground to your front door.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"</p>
+                                <button onclick="buttonApple()" class="cartbtn">Add to Cart</button>
+                                <p>
+                                <span class="a-declarative" data-action="quantity-dropdown" data-quantity-dropdown="{}">
+                                	<span class="a-dropdown-container">
+                                		<label class="a-native-dropdown" for="quantity">Qty:</label>
+                                	<select id="quantity" class="a-native-dropdown" name="quantity" autocomplete="off">
+                                		<option value ="1">1</option>
+                                		<option value ="2">2</option>
+                                		<option value ="3">3</option>
+                                		<option value ="4">4</option>
+                                		<option value ="5">5</option>
+                                		</select>
+                                	</span>
+                               	</span>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="images/banana.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$.49/Pound</h4>
+                                <h4><a href="#">Bananas</a>
+                                </h4>
+                                <p>Soft and rich in flavor, these bananas are one of our best selling fruits.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"</p>
+                                <button  onclick="buttonBananna()" class="cartbtn">Add to Cart</button>
+                                <p>
+                                    <span class="a-declarative" data-action="quantity-dropdown" data-quantity-dropdown="{}">
+                                	<span class="a-dropdown-container">
+                                		<label class="a-native-dropdown" for="quantity">Qty:</label>
+                                	<select id="quantity" class="a-native-dropdown" name="quantity" autocomplete="off">
+                                		<option value ="1">1</option>
+                                		<option value ="2">2</option>
+                                		<option value ="3">3</option>
+                                		<option value ="4">4</option>
+                                		<option value ="5">5</option>
+                                		</select>
+                                	</span>
+                               	</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="images/watermelon.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$2.99/Ea</h4>
+                                <h4><a href="#">Watermelon</a>
+                                </h4>
+                                <p>You won't find juicier watermelons anywhere else.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"</p>
+                                <button  onclick="buttonWatermelon()" class="cartbtn">Add to Cart</button>
+                                </p>
+                                    <span class="a-declarative" data-action="quantity-dropdown" data-quantity-dropdown="{}">
+                                	<span class="a-dropdown-container">
+                                		<label class="a-native-dropdown" for="quantity">Qty:</label>
+                                	<select id="quantity" class="a-native-dropdown" name="quantity" autocomplete="off">
+                                		<option value ="1">1</option>
+                                		<option value ="2">2</option>
+                                		<option value ="3">3</option>
+                                		<option value ="4">4</option>
+                                		<option value ="5">5</option>
+                                		</select>
+                                	</span>
+                               	</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="images/strawberry.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$3.49/Pound</h4>
+                                <h4><a href="#">Strawberries</a>
+                                </h4>
+                                <p>These sweet strawberries are a great snack for everyone to enjoy.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"</p>
+                                <button  onclick="buttonStrawberry()" class="cartbtn">Add to Cart</button>
+                                <p>
+                                   <span class="a-declarative" data-action="quantity-dropdown" data-quantity-dropdown="{}">
+                                	<span class="a-dropdown-container">
+                                		<label class="a-native-dropdown" for="quantity">Qty:</label>
+                                	<select id="quantity" class="a-native-dropdown" name="quantity" autocomplete="off">
+                                		<option value ="1">1</option>
+                                		<option value ="2">2</option>
+                                		<option value ="3">3</option>
+                                		<option value ="4">4</option>
+                                		<option value ="5">5</option>
+                                		</select>
+                                	</span>
+                               	</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="images/orange.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$.89/Pound</h4>
+                                <h4><a href="#">Oranges</a>
+                                </h4>
+                                <p>Our friends from Florida only grow the best citrus fruit for you and your family.</p>
+                            </div>
+                            <div class="ratings">
+                            <p class="pull-right"</p>
+  							<button  onclick="buttonOrange()" class="cartbtn">Add to Cart</button>
+  							</div>
+			                
+                                <p>
+                                    <span class="a-declarative" data-action="quantity-dropdown" data-quantity-dropdown="{}">
+                                	<span class="a-dropdown-container">
+                                		<label class="a-native-dropdown" for="quantity">Qty:</label>
+                                		<select id="quantity" class="a-native-dropdown" name="quantity" autocomplete="off">
+                                			<option value ="1">1</option>
+                                			<option value ="2">2</option>
+                                			<option value ="3">3</option>
+                                			<option value ="4">4</option>
+                                			<option value ="5">5</option>
+                                		</select>
+                                	</span>
+                               	</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; CS160 Group 3</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

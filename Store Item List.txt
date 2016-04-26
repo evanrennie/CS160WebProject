@@ -1,0 +1,31 @@
+FRUIT:
+apple 2.49/pound
+banana .49/pound
+watermelon 2.99/ea
+strawberries 3.49/pound
+oranges .89/pound
+
+DRINKS:
+water .99/bottle
+gatorade 1.49/bottle
+milk 2.99/gallon
+pepsi 14.99/12 pack
+tea .99/bottle
+
+GRAINS:
+bread 2.99/loaf
+rice 8.99/20 Lb Bag
+pasta .99/pound
+oatmeal 1.49/pound
+
+VEGETABLES:
+broccoli 1.99/pound
+spinach 3.89/pound
+carrots .79/pound
+lettuce 1.79/pound
+
+MEATS:
+beef 3.59/pound
+pork 5.49/pound
+chicken 4.99/ea
+salmon 13.99/pound
