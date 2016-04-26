@@ -11,7 +11,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <title>Grocery Store</title>
 
-    <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap Core CSS
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -19,10 +19,10 @@
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  
 <script>
 
 	var cartSize= 0;
@@ -32,31 +32,42 @@
 	var strawberryNumber=0;
 	var orangeNumber =0;
 
+window.localStorage.setItem("cartSize", JSON.stringify(cartSize)); // Saving
 function buttonApple() {
 	cartSize++;
 	applesNumber++;
 	document.getElementById("cart").innerHTML = "cart("+cartSize+")";
+	
+window.localStorage.setItem("cartSize", JSON.stringify(cartSize)); // Saving
 }
 function buttonBananna() {
 	cartSize++;
 	banannaNumber++;
 	document.getElementById("cart").innerHTML = "cart("+cartSize+")";
+	
+window.localStorage.setItem("cartSize", JSON.stringify(cartSize)); // Saving
 }
 function buttonWatermelon() {
 	cartSize++;
 	watermelonNumber++;
 	document.getElementById("cart").innerHTML = "cart("+cartSize+")";
-}
+
+window.localStorage.setItem("cartSize", JSON.stringify(cartSize)); // Saving
+	}
 function buttonStrawberry() {
 	cartSize++;
 	strawberryNumber++;
 	document.getElementById("cart").innerHTML = "cart("+cartSize+")";
-}
+
+window.localStorage.setItem("cartSize", JSON.stringify(cartSize)); // Saving
+	}
 function buttonOrange() {
 	cartSize++;
 	orangeNumber++;
 	document.getElementById("cart").innerHTML = "cart("+cartSize+")";
-}
+
+window.localStorage.setItem("cartSize", JSON.stringify(cartSize)); // Saving
+	}
 </script>
 </head>
 
@@ -73,7 +84,7 @@ function buttonOrange() {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Home</a>
+                 <a class="navbar-brand" href="index.html">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -88,7 +99,7 @@ function buttonOrange() {
                         <a href="#">Contact</a>
                     </li>
 					 <li>
-                        <a id="cart" href="#">cart</a>
+                        <a id="cart" href="cartPage.html">Cart</a>
                     </li>
                 </ul>
             </div>
@@ -105,11 +116,11 @@ function buttonOrange() {
             <div class="col-md-3">
                 <p class="lead">Shop Name</p>
                 <div class="list-group">
-                	<a href="#" class="list-group-item">Drinks</a>
-                	<a href="#" class="list-group-item">Fruits</a>
-              	  	<a href="#" class="list-group-item">Grains</a>
-              	  	<a href="#" class="list-group-item">Meats</a>
-              	  	<a href="#" class="list-group-item">Vegetables</a>
+                	<a href="drinks.html" class="list-group-item">Drinks</a>
+                	<a href="index.html" class="list-group-item">Fruits</a>
+              	  	<a href="grains.html" class="list-group-item">Grains</a>
+              	  	<a href="meats.html" class="list-group-item">Meats</a>
+              	  	<a href="vegetables.html" class="list-group-item">Vegetables</a>
                 </div>
             </div>
 
