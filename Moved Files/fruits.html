@@ -11,8 +11,8 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <title>Grocery Store</title>
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
@@ -73,7 +73,7 @@ function buttonOrange() {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                 <a class="navbar-brand" href="fruits.html">Home</a>
+                <a class="navbar-brand" href="#">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -88,7 +88,7 @@ function buttonOrange() {
                         <a href="#">Contact</a>
                     </li>
 					 <li>
-                        <a id="cart" href="cartPage.html">Cart</a>
+                        <a id="cart" href="#">Cart</a>
                     </li>
                 </ul>
             </div>
@@ -105,11 +105,11 @@ function buttonOrange() {
             <div class="col-md-3">
                 <p class="lead">Shop Name</p>
                 <div class="list-group">
-                	<a href="drinks.html" class="list-group-item">Drinks</a>
-                	<a href="fruits.html" class="list-group-item">Fruits</a>
-              	  	<a href="grains.html" class="list-group-item">Grains</a>
-              	  	<a href="meats.html" class="list-group-item">Meats</a>
-              	  	<a href="vegetables.html" class="list-group-item">Vegetables</a>
+                	<a href="#" class="list-group-item">Drinks</a>
+                	<a href="#" class="list-group-item">Fruits</a>
+              	  	<a href="#" class="list-group-item">Grains</a>
+              	  	<a href="#" class="list-group-item">Meats</a>
+              	  	<a href="#" class="list-group-item">Vegetables</a>
                 </div>
             </div>
 
@@ -150,16 +150,16 @@ function buttonOrange() {
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="images/water.png" alt="">
+                            <img src="images/Apple.png" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$.99/Bottle</h4>
-                                <h4><a href="#">Arrowhead Water</a>
+                                <h4 class="pull-right">$2.49/Pound</h4>
+                                <h4><a href="#">Apples</a>
                                 </h4>
-                                <p>Great tasting water from mountain springs and the west of the Rockies.</p>
+                                <p>Delicious Red Apples straight from the ground to your front door.</p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right"</p>
-                                <button onclick="buttonWater()" class="cartbtn">Add to Cart</button>
+                                <button onclick="buttonApple()" class="cartbtn">Add to Cart</button>
                                 <p>
                                 <span class="a-declarative" data-action="quantity-dropdown" data-quantity-dropdown="{}">
                                 	<span class="a-dropdown-container">
@@ -181,16 +181,16 @@ function buttonOrange() {
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="images/gatorade.png" alt="">
+                            <img src="images/banana.png" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$1.49/Bottle</h4>
-                                <h4><a href="#">Gatorade</a>
+                                <h4 class="pull-right">$.49/Pound</h4>
+                                <h4><a href="#">Bananas</a>
                                 </h4>
-                                <p>A sports drink rich in electrolytes and flavor.</p>
+                                <p>Soft and rich in flavor, these bananas are one of our best selling fruits.</p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right"</p>
-                                <button  onclick="buttonGatorade()" class="cartbtn">Add to Cart</button>
+                                <button  onclick="buttonBananna()" class="cartbtn">Add to Cart</button>
                                 <p>
                                     <span class="a-declarative" data-action="quantity-dropdown" data-quantity-dropdown="{}">
                                 	<span class="a-dropdown-container">
@@ -211,16 +211,16 @@ function buttonOrange() {
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="images/milk.png" alt="">
+                            <img src="images/watermelon.png" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$2.99/Gallon</h4>
-                                <h4><a href="#">Milk</a>
+                                <h4 class="pull-right">$2.99/Ea</h4>
+                                <h4><a href="#">Watermelon</a>
                                 </h4>
-                                <p>Our happy Californian cows produce great tasting milk for you to enjoy.</p>
+                                <p>You won't find juicier watermelons anywhere else.</p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right"</p>
-                                <button  onclick="buttonMilk()" class="cartbtn">Add to Cart</button>
+                                <button  onclick="buttonWatermelon()" class="cartbtn">Add to Cart</button>
                                 </p>
                                     <span class="a-declarative" data-action="quantity-dropdown" data-quantity-dropdown="{}">
                                 	<span class="a-dropdown-container">
@@ -241,16 +241,16 @@ function buttonOrange() {
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="images/Pepsi.png" alt="">
+                            <img src="images/strawberry.png" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$14.99/12 Pack</h4>
-                                <h4><a href="#">Pepsi</a>
+                                <h4 class="pull-right">$3.49/Pound</h4>
+                                <h4><a href="#">Strawberries</a>
                                 </h4>
-                                <p>Enjoy one of the most popular sodas available.</p>
+                                <p>These sweet strawberries are a great snack for everyone to enjoy.</p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right"</p>
-                                <button  onclick="buttonPepsi()" class="cartbtn">Add to Cart</button>
+                                <button  onclick="buttonStrawberry()" class="cartbtn">Add to Cart</button>
                                 <p>
                                    <span class="a-declarative" data-action="quantity-dropdown" data-quantity-dropdown="{}">
                                 	<span class="a-dropdown-container">
@@ -271,16 +271,16 @@ function buttonOrange() {
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="images/tea.png" alt="">
+                            <img src="images/orange.png" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$.99/Bottle</h4>
-                                <h4><a href="#">Sparkling Tea</a>
+                                <h4 class="pull-right">$.89/Pound</h4>
+                                <h4><a href="#">Oranges</a>
                                 </h4>
-                                <p>A healthy and bubbly alternative drink to enjoy, with more taste than plain water.</p>
+                                <p>Our friends from Florida only grow the best citrus fruit for you and your family.</p>
                             </div>
                             <div class="ratings">
                             <p class="pull-right"</p>
-  							<button  onclick="buttonTea()" class="cartbtn">Add to Cart</button>
+  							<button  onclick="buttonOrange()" class="cartbtn">Add to Cart</button>
   							</div>
 			                
                                 <p>
