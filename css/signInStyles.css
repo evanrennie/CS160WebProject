@@ -5,7 +5,7 @@
   padding: 30px;
   max-width: 350px;
   width: 100% !important;
-  background-color: #181818;
+  background-color: #8e9294;
   margin: 0 auto;
   border-radius: 2px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -84,7 +84,7 @@
 
 .loginmodal-container a {
   text-decoration: none;
-  color: #666;
+  color: #000000;
   font-weight: 400;
   text-align: center;
   display: inline-block;

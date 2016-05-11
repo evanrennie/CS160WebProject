@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <title>
-                NEW USER
+                New User Account Creation
         </title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -88,11 +88,10 @@
         </script>
         <div id="header"></div>
         <div>
-            <form action="php/createUser.php" onsubmit="return validate()" method="post">
+            <form onsubmit="return validate()">
 
                 <div class="modal-dialog">
                     <div class="loginmodal-container">
-                        <h1>Please Create Account</h1><br>
                         <form>
                             <input type="text" name="username" id="username" placeholder="Username">
                             <input type="text" name="firstName" id="firstName" placeholder="First Name">
@@ -100,11 +99,12 @@
                             <input type="text" name="email" id="email" placeholder="Email">
                             <input type="password" name="password" id="password" placeholder="Password">
                             <input type="password" name="passwordCheck" id="passwordCheck" placeholder="Re-Enter Password">
-                            <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                            <input type="submit" name="login" class="login loginmodal-submit" value="Create New Account">
+
                         </form>
 
                         <div class="login-help">
-                            <a href="signIn.html">Have an Exsiting Account?</a>
+                            <a href="index.php">Have an Exsiting Account?</a>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 body {
-    background-color: #181818;
+    background-color: #8e9294;
     font-family: "Open Sans";
 }
 
@@ -11,7 +11,7 @@ h1 {
 }
 
 legend {
-    color:#181818;
+    color:#8e9294;
 }
 
 #teamName {
@@ -46,18 +46,18 @@ a:hover {
 }
 
 #pageLinks {
-    background-color: #181818;
+    background-color: #8e9294;
 }
 
 #aboutUs {
     color: orange;
     font-size: 40px;
     font-weight: bold;
-    background-color: #181818;
+    background-color: #8e9294;
 }
 
 header {
-    background-color: #181818;
+    background-color: #8e9294;
 }
 
 input {

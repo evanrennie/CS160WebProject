@@ -11,7 +11,7 @@ if(loggedin())
    $userid=$data['id'];
     
    echo 'Welcome! ' . $firstname . ' ' . $surname .'<a  href="logout.php"><input type="button"  value="Logout"/></a>';
-   echo 'Or Continue to Site' . '<a href="fruits.html"><input type="button" value="SaveMax"/></a>';
+   echo 'Or Continue to Site' . '<a href="store.html"><input type="button" value="SaveMax"/></a>';
  }
 else
 {
