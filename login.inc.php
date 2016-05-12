@@ -51,7 +51,7 @@ Username: <input type="text" name="username"> Password: <input type="password" n
     <head>
         <meta charset="UTF-8"/>
         <title>
-                USER LOGIN 
+                SaveMax User Login, Welcome!
         </title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -84,9 +84,8 @@ Username: <input type="text" name="username"> Password: <input type="password" n
                         <input type="password" name="password" placeholder="password">
                         <input type="submit" name="login" class="login loginmodal-submit" value="Log in">
                     </form>
-
-                    <div class="login-help">
-                        <a> <?php $_SESSION['newUser'] = 'true';?> New User </a> 
+                    <div>
+                        <a href = "newUser.php"> New User </a> 
                     </div>
                 </div>
             </div>
