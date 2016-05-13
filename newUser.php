@@ -1,6 +1,6 @@
 <?php
-require 'core.inc.php';
 require 'connection.inc.php';
+require 'core.inc.php';
 
 ?>
     <head>

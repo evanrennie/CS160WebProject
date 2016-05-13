@@ -1,15 +1,18 @@
 <?php
-require 'core.inc.php';
 require 'connection.inc.php';
+session_start();
 
-if(isset($_POST['storeID'])
-{
-$storeID = $_POST['storeID'];
-$username = $_POST['username'];
+$storeID = "<script>document.write(localStorage.getItem('storeID'));</script>";
+
+//$storeID = $_POST['storeID'];
+$id = $_SESSION['user_id'];
+$username = $_SESSION['username'];
+//echo $id '<br>';
+
  
-if(!empty($storeID))
+if(!empty($storeID)&&!empty($id))
 {
-    $sql = "UPDATE `User_Id` SET `storeID` = '$storeID' WHERE `username` = '$username'";
+    $sql = "UPDATE `User_Id` SET `storeID` = '$storeID' WHERE `username` = '$username' ";
 
     $retval = mysql_query($sql) or die(mysql_error());
     
@@ -22,7 +25,6 @@ if(!empty($storeID))
     	header("Location: map.php");
     	exit();
     }
-}
 }
 
 ?>
