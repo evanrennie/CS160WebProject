@@ -19,11 +19,10 @@ if(!empty($username)&&!empty($password))
     $sql = "INSERT INTO `User_Id` (`username`, `password`, `firstname`, `lastname`) VALUES ('$username', '$password_hash', '$fname', '$lname')";
 
     $retval = mysql_query($sql) or die(mysql_error());
-
     
     if ($retval)
     {
-    	$query = mysql_query("SELECT * FROM User_Id WHERE username ='$username' AND password = '$password_hash'") or die(mysql_error()); 
+    	$query = mysql_query("SELECT * FROM User_Id WHERE username ='".$username."' AND password ='".$password_hash."'") or die(mysql_error()); 
  
 		$data = mysql_fetch_array($query);
 

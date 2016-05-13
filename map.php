@@ -2,18 +2,28 @@
   //$store = $_POST['storeID'];
 ?>
 
-
-<div align="center">
- <font size="6">Please Choose a Nearby Store</font></div>
+<html>
+<div align="center" position="fixed">
+ <font size="6">Please Choose Your Home Store</font></div>
+ <form action = "mapToStore.php" method = "POST">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
+ </form>
 
 <!--FORM-->
-<form action="mapToStore.php" method="POST">
-  <input type="hidden" name="storeID" id="storeID" value="storeID">
-</form>
 
 <div align="center">
   <div id="dvMap" style="width: 1400px; height: 1000px">
 </div>
+</html>
 
 <style>
 html, body {
@@ -123,8 +133,9 @@ html, body {
     	window.alert("Please choose a store by clicking a marker.");
     }
     else {
-      document.getElementById("storeID").innerHTML = storeChosen;
+      document.getElementById("storeID").innerHTML = 'storeChosen';
       window.localStorage.setItem("storeID", JSON.stringify(storeChosen));
+      //document.location.href = "mapToStore.php?name="+storeChosen;
       document.location.href = "mapToStore.php";
       //alert(document.getElementById("storeID").innerHTML);
     	//document.location.href = "fruits.html";
