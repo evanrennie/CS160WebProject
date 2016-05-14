@@ -94,12 +94,11 @@
  
 </table>
 
-<button onclick="getAllItems()">Checkout</button>
 <br/>
 <br/>
 
 <div>
-<form action="postToDB.php" method="post" name="checkout">
+<form action="timePage.html" method="post" name="checkout">
   <label>Card Number:
     <input type="text" pattern="[0-9]{13,16}" maxlength="16" name="cardNumber" title="16 digit number" id="cardNumber" />
   </label>
@@ -117,12 +116,12 @@
   <br />
   <br />
  <label>Last Name:   
-   <input type="text" pattern="[A-Za-z]{1,15}" maxlength="16" name="lastName" id="lastName" />
+   <input  type="text" pattern="[A-Za-z]{1,15}" maxlength="16" name="lastName" id="lastName" />
  
  </label>
   <br />
   <br />
-<input name="Submit" onclick="getAllItems()" type="submit" value="Submit" />
+<input name="Submit" onclick="getAllItems()"  href="timePage.html" type="submit" value="Submit" />
 </form>
 </div>
     </center>
@@ -136,27 +135,19 @@ var finalCart = cart;
 var array = Object.keys(cart)
 var arrayOfValues= new Array();
 function getAllItems(){
-var arrayOfKeys = array.join();
-var arrayValues = arrayOfValues.join();
 
-
-	for(i=0; i <arrayOfKeys.length; i++){
-	arrayOfKeys=  arrayOfKeys.replace(",", " | ");
-	arrayOfKeys=  arrayOfKeys.replace("\"", "");
-	}
-	for(i=0; i <arrayValues.length; i++){
-	arrayValues=  arrayValues.replace(",", " | ");
-	arrayValues=  arrayValues.replace("\"", "");
-	}
-finalCart = cart;
-	//<a href="./display.php?data=Data1&data2=Data120">Click here</a>
-	window.localStorage.setItem("finalCart", JSON.stringify(finalCart)); // Saving
-		window.localStorage.setItem("keys", JSON.stringify(arrayOfKeys)); // Saving
-		window.localStorage.setItem("values", JSON.stringify(arrayValues)); // Saving
-	
-	elements = [1, 2, 9, 15].join(',');
-$.post('postToDB.php', {elements: elements});
-	
+ function validateForm()
+    {
+    var a=document.forms["checkout"]["firstName"].value;
+    var b=document.forms["checkout"]["lastName"].value;
+    var c=document.forms["checkout"]["cscNumber"].value;
+    var d=document.forms["checkout"]["cardNumber"].value;
+    if (a==null || a=="",b==null || b=="",c==null || c=="",d==null || d=="")
+      {
+      alert("Please Fill All Required Field");
+      return false;
+      }
+    }
 	}
 var price = JSON.parse(window.localStorage.getItem("price"));
 document.getElementById("cart").innerHTML = "Cart("+Object.keys(cart).length+")";
