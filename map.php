@@ -3,25 +3,26 @@
 ?>
 
 <html>
-<div align="center" position="fixed">
+ <div align="center" position="fixed">
  <font size="6">Please Choose Your Home Store</font></div>
- <form action = "mapToStore.php" method = "POST">
+ <div><form action = "mapToStore.php" method = "POST">
  	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
- 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
- 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
- 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
- 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
- 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
- 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
- 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
- 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
- 	<input id="storeChoice" type="submit" name="submit" value=" 1406 Fillmore St. San Francisco">
- </form>
+ 	<input id="storeChoice" type="submit" name="submit" value=" 520 Tamarack Ln, San Francisco">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 200 S B St, San Mateo">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 401 Hillsdale Mall, San Mateo">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 815 Elmira Dr, Sunnyvale"></form></div>
+  <div><form action = "mapToStore.php" method = "POST">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 97 S San Pedro St, San Jose">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 1001 Market St, Oakland">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 2583 Haste St, Berkeley">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 1690 Detroit Ave, Concord">
+ 	<input id="storeChoice" type="submit" name="submit" value=" 3636 Walnut Blvd, Brentwood">
+ </form> </div>
 
 <!--FORM-->
 
 <div align="center">
-  <div id="dvMap" style="width: 1400px; height: 1000px">
+  <div id="dvMap" style="width: 1000px; height: 1000px">
 </div>
 </html>
 
@@ -34,18 +35,12 @@ html, body {
       #map {
         height: 100%;
       }
-      #floating-panel {
-        position: fixed;
-        top: 45px;
-        left: 25%;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 2px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
+      #storeChoice {
+        position: relative;
+        font-size: 20px;
+        left: 5%;
+        display: inline-block;
+        width: 210px;
       }
 </style>
  
@@ -62,62 +57,62 @@ html, body {
         "title": 'San Francisco Branch 1',
         "lat": '37.782423',
         "lng": '-122.432495',
-        "description": 'Would you like to select 1406 Fillmore St, San Francisco as your default store?'    
+        "description": 'Please Select 1406 Fillmore St, San Francisco as your default store.'    
     },
     {
        "title": 'San Francisco Branch 2',
         "lat": '37.658130',
         "lng": '-122.415701',
-        "description": 'Would you like to select 520 Tamarack Ln, San Francisco as your default store?'
+        "description": 'Please Select 520 Tamarack Ln, San Francisco as your default store.'
     },
     {
         "title": 'San Mateo Branch 1',
         "lat": '37.565997',
         "lng": '-122.323287',
-        "description": 'Would you like to select 200 S B St, San Mateo as your default store?'
+        "description": 'Please Select 200 S B St, San Mateo as your default store.'
 
     },
     {
         "title": 'San Mateo Branch 2',
         "lat": '37.536565',
         "lng": '-122.299216',
-        "description": 'Would you like to select 401 Hillsdale Mall, San Mateo as your default store?'
+        "description": 'Please Select 401 Hillsdale Mall, San Mateo as your default store.'
     },
     {
         "title": 'Santa Clara Branch 1',
         "lat": '37.365741',
         "lng": '-122.042859',
-        "description": 'Would you like to select 815 Elmira Dr, Sunnyvale as your default store?'
+        "description": 'Please Select 815 Elmira Dr, Sunnyvale as your default store.'
     },
     {
          "title": 'Santa Clara Branch 2',
          "lat": '37.333462',
          "lng": '-121.891696',
-         "description": 'Would you like to select 97 S San Pedro St, San Jose as your default store?'
+         "description": 'Please Select 97 S San Pedro St, San Jose as your default store.'
     },
     {
          "title": 'Alameda Branch 1',
          "lat": '37.805924',
          "lng": '-122.282252',
-         "description": 'Would you like to select 1001 Market St, Oakland as your default store?'
+         "description": 'Please Select 1001 Market St, Oakland as your default store.'
     },
     {
          "title": 'Alameda Branch 2',
          "lat": '37.866417',
          "lng": '-122.256563',
-         "description": 'Would you like to select 2583 Haste St, Berkeley as your default store?'
+         "description": 'Please Select 2583 Haste St, Berkeley as your default store.'
     },
     {
          "title": 'Contra Costa Branch 1',
          "lat": '37.969822',
          "lng": '-122.041222',
-         "description": 'Would you like to select 1690 Detroit Ave, Concord as your default store?'
+         "description": 'Please Select 1690 Detroit Ave, Concord as your default store.'
     },
     {
          "title": 'Contra Costa Branch 2',
          "lat": '37.927046',
          "lng": '-121.695153',
-         "description": 'Would you like to select 3636 Walnut Blvd, Brentwood as your default store?'
+         "description": 'Please Select 3636 Walnut Blvd, Brentwood as your default store.'
     }
 ];
     var infoWindow = new google.maps.InfoWindow();
@@ -134,9 +129,9 @@ html, body {
     }
     else {
       document.getElementById("storeID").innerHTML = 'storeChosen';
-      window.localStorage.setItem("storeID", JSON.stringify(storeChosen));
+      //window.localStorage.setItem("storeID", JSON.stringify(storeChosen));
       //document.location.href = "mapToStore.php?name="+storeChosen;
-      document.location.href = "mapToStore.php";
+      //document.location.href = "mapToStore.php";
       //alert(document.getElementById("storeID").innerHTML);
     	//document.location.href = "fruits.html";
     }
@@ -163,7 +158,7 @@ html, body {
             (function (marker, data) {
                 google.maps.event.addListener(marker, "click", function (e) {
                     infoWindow.close();
-                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.description + "</div>" + '<button onclick="myFunction()">Choose Store</button>');
+                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.description + "</div>");
                     infoWindow.open(map, marker);
                     storeChosen = data.title;
                     //alert(storeChosen);
