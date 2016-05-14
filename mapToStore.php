@@ -15,6 +15,8 @@ if(!empty($username)&&!empty($id)&&!empty($storeID))
     $sql = "UPDATE `User_Id` SET `storeID`='$storeID' WHERE `username`='$username' ";
 
     $retval = mysql_query($sql) or die(mysql_error());
+	
+	$_SESSION['storeID'] = $storeID;
     
     if ($retval)
     {
