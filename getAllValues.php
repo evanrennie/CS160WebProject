@@ -3,8 +3,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "rootpassword";
-$dbname = "test_db";
+$password = "";
+$dbname = "Login_Info";
 
 session_start();
 
