@@ -24,97 +24,163 @@
 
   
 <script>
-
-	var cartSize= 0;
-	var applesNumber=0;
-	var banannaNumber=0;
-	var waterMelon=0;
-	var strawberryNumber=0;
-	var orangeNumber =0;
-	
-	
-	var cart =new Array();
-	
-	
-	var apples = ["Apples", "2.50", "10"];
-	var banana = ["Banana", "1.50", "10"];
-	var watermelon = ["Watermelon", "4.00", "3"];
-	var strawberries = ["Strawberries", "3.00", "40"];
-	var oranges = ["Oranges", ".50", "23"];
+	var apples = ["Apples", "1",  "1.00"];
+	var banana = ["Banana", "1", "1.00"];
+	var watermelon = ["Watermelon", "1", "1.00"];
+	var strawberries = ["Strawberries", "1",  "1.00"];
+	var oranges = ["Oranges","1",  "1.00"];
 	var allFruits = [apples, banana, watermelon, strawberries, oranges];
 	
-	var arrowheadWater = ["Arrowhead Water", "14", "2.99"];
-	var gatorade = ["Gatorade", "4", "1.39"];
-	var milk = ["Milk", "13", "0.99"];
-	var sparklingTea = ["Sparkling Tea", "24", "0.99"];
-	var pepsi = ["Pepsi","2", "0.99"];
+	var arrowheadWater = ["Arrowhead-Water","1",  "1.00"];
+	var gatorade = ["Gatorade", "1",  "1.00"];
+	var milk = ["Milk","1",  "1.00"];
+	var sparklingTea = ["Sparkling-Tea", "1",  "1.00"];
+	var pepsi = ["Pepsi","1",  "1.00"];
 	var allDrinks = [arrowheadWater, gatorade, milk, sparklingTea, pepsi];
 	
-	var bread =["Bread", "27", "2.99"];
-	var rice=["Rice", "7", "3.99"];
-	var pasta=["Pasta", "1", "2.32"];
-	var oatmeal=["Oatmeal", "4", "0.93"];
+	var bread =["Bread","1",  "1.00"];
+	var rice=["Rice", "1",  "1.00"];
+	var pasta=["Pasta","1",  "1.00"];
+	var oatmeal=["Oatmeal", "1",  "1.00"];
 	var allGrains= [bread, rice, pasta, oatmeal];
 	
-	var groundBeef = ["Ground Beef", "18", "5.99"];
-	var porkChop = ["Pork Chop", "7", "2.12"];
-	var rotisserieChicken = ["Rotisserie Chicken", "4", "10.00"];
-	var wildSalmon = ["Wild Salmon", "13", "5.00"];
+	var groundBeef = ["Ground-Beef", "1",  "1.00"];
+	var porkChop = ["Pork-Chop", "1",  "1.00"];
+	var rotisserieChicken = ["Rotisserie-Chicken", "1",  "1.00"];
+	var wildSalmon = ["Wild-Salmon", "1",  "1.00"];
 	var allMeats = [groundBeef, porkChop, rotisserieChicken, wildSalmon];
 	
-	var carrot =["Carrots", "27", "2.99"];
-	var broccoli=["Broccoli", "7", "3.99"];
-	var lettuce=["Lettuce", "1", "2.32"];
-	var spinach=["spinach", "4", "0.93"];
+	var carrot =["Carrots","1",  "1.00"];
+	var broccoli=["Broccoli", "1",  "1.00"];
+	var lettuce=["Lettuce","1.00",  "1"];
+	var spinach=["spinach", "1",  "1.00"];
 	var allVegetables=  [carrot, broccoli, lettuce, spinach];
-	
-window.localStorage.setItem("cartSize", JSON.stringify(cartSize)); // Saving
-function buttonApple() {
-	cartSize++;
-	applesNumber++;
-	document.getElementById("cart").innerHTML = "cart("+cartSize+")";
-	
-	window.localStorage.setItem("cartSize", JSON.stringify(cartSize)); // Saving
+		
+	var cart = JSON.parse(window.localStorage.getItem("cart"));
+	var price =  JSON.parse(window.localStorage.getItem("price"));
+	if (cart == null){
+cart ={};
+}
+if (price == null){
+ price = {}; 
 }
 	
+	
+	function tester()
+	{
+		     $(function(){
+			 
+       $.get("getAllValues.php", function(data){
+	   
+			var arrays = data.split("|");
+			var temp={};
+			for(i=0; i< arrays.length; i++){
+			temp =arrays[i].replace("[ ", "").replace("]", "").split(" ");
+			
+				if(temp[3]== "fruits")
+				{
+				populateArrays(temp);
+				}
+				if(temp[3]== "meats")
+				{
+				populateArraysMeats(temp);
+				}
+				if(temp[3]== "drinks")
+				{
+				populateArraysDrinks(temp);
+				}
+				if(temp[3]== "grains")
+				{
+				populateArraysGrains(temp);
+				}if(temp[3]== "vegetables")
+				{
+				populateArraysVeg(temp);
+				}
+			
+			}
+       });
+    });
+	alert("!");
+	var finalCart =  JSON.parse(window.localStorage.getItem("finalCart"));
+	if (finalCart == null){
+	cart ={};
+	alert("!");
+	}
+	else{
+	for(ww=0; ww<finalCart.length; ww++)
+	{
+	alert(finalCart[ww]);
+	}
+	}
+	}
+	
+	function populateArrays(array){
+	for(j=0; j < allFruits.length; j++){
+	if(array[0].replace(/\s+/, "") == allFruits[j][0])
+	{
+		allFruits[j][1]= array[1].replace(/\s+/, "");
+		allFruits[j][2]= array[2].replace(/\s+/, "");
+		
+	}
 
-/*
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="images/Apple.png" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$2.49/Pound</h4>
-                                <h4><a href="#">Apples</a>
-                                </h4>
-                                <p>Delicious Red Apples straight from the ground to your front door.</p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right"</p>
-                                <button onclick="buttonApple()" class="cartbtn">Add to Cart</button>
-                                <p>
-                                <span class="a-declarative" data-action="quantity-dropdown" data-quantity-dropdown="{}">
-                                	<span class="a-dropdown-container">
-                                		<label class="a-native-dropdown" for="quantity">Qty:</label>
-                                	<select id="quantity" class="a-native-dropdown" name="quantity" autocomplete="off">
-                                		<option value ="1">1</option>
-                                		<option value ="2">2</option>
-                                		<option value ="3">3</option>
-                                		<option value ="4">4</option>
-                                		<option value ="5">5</option>
-                                		</select>
-                                	</span>
-                               	</span>
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-*/
+	}
+	}
+	function populateArraysMeats(array){
+	for(m=0; m < allMeats.length; m++){
+	if(array[0].replace(/\s+/, "") == allMeats[m][0])
+	{
+		allMeats[m][1]= array[1].replace(/\s+/, "");
+		allMeats[m][2]= array[2].replace(/\s+/, "");
+	}
+	}
+	}
+	
+		function populateArraysDrinks(array){
+	for(d=0; d < allDrinks.length; d++){
+	if(array[0].replace(/\s+/, "") == allDrinks[d][0])
+	{
+		allDrinks[d][1]= array[1].replace(/\s+/, "");
+		allDrinks[d][2]= array[2].replace(/\s+/, "");
+	}
+	}
+	}
+	
+			function populateArraysVeg(array){
+	for(v=0; v < allVegetables.length; v++){
+	if(array[0].replace(/\s+/, "") == allVegetables[v][0])
+	{
+		allVegetables[v][1]= array[1].replace(/\s+/, "");
+		allVegetables[v][2]= array[2].replace(/\s+/, "");
+	}
+	}
+	}
+				function populateArraysGrains(array){
+	for(g=0; g < allGrains.length; g++){
+	if(array[0].replace(/\s+/, "") == allGrains[g][0])
+	{
+		allGrains[g][1]= array[1].replace(/\s+/, "");
+		allGrains[g][2]= array[2].replace(/\s+/, "");
+	}
+	}
+	}
+	
+	
+	
+	var cart = JSON.parse(window.localStorage.getItem("cart"));
+	var price =  JSON.parse(window.localStorage.getItem("price"));
+	if (cart == null){
+cart ={};
+}
+if (price == null){
+ price = {}; 
+}
+	
+	
+	
 
 var currentNameOfItem = "";
 function myFucntion(type){
+tester();
 var array;
 	if(type=="fruits")
 	{
@@ -149,7 +215,7 @@ for (i = 0; i <array.length; i++) {
 	currentNameOfItem = currentArray[0];
 document.getElementById('mainContainer').innerHTML = document.getElementById('mainContainer').innerHTML  +'<div class="col-sm-4 col-lg-4 col-md-4">'
                         +'<div class="thumbnail"><img src="images/'+currentArray[0]+'.png" +"alt=""><div class="caption">'
-                            +'     <h4 class="pull-right">$'+currentArray[1]+'/Pound</h4>'
+                            +'     <h4 class="pull-right">$'+currentArray[1]+'</h4>'
                              +'    <h4><a href="#">'+currentArray[0]+'</a>'
                                +'  </h4>'
                                 +' <p></p>'
@@ -174,23 +240,39 @@ document.getElementById('mainContainer').innerHTML = document.getElementById('ma
 function addToCart(nameOfButton){
 var selectedHTML = document.getElementById(nameOfButton+"quantity");
 var quantityOfItem = selectedHTML.options[selectedHTML.selectedIndex].value;
-for(i =0; i< cart.size; i++){
-	currentItem =cart[i];
-	var splitArray = currentItem.split("|");
-	if(splitArray[0]==nameOfButton)
+
+	cart[nameOfButton]= quantityOfItem;
+traverseArray(allDrinks, nameOfButton);
+traverseArray(allFruits, nameOfButton);
+traverseArray(allGrains, nameOfButton);
+traverseArray(allMeats, nameOfButton);
+traverseArray(allVegetables, nameOfButton);
+	document.getElementById("cart").innerHTML = "Cart("+Object.keys(cart).length+")";
+window.localStorage.setItem("cart", JSON.stringify(cart)); // Saving
+}
+
+function traverseArray(array, nameOfButton){
+
+for(i=0;i<array.length;i++)
+{
+for(j=0; j<array[i].length; j++)
 	{
-	if(quantityOfItem+splitArray[1])
-	cart.push(nameOfButton+"|"+quantityOfItem+splitArray[1]);
+	if(array[i][0]==nameOfButton)
+		{
+			price[nameOfButton]= array[i][1];
+		
+		}
 	}
 }
-alert(cart);
-
+window.localStorage.setItem("price", JSON.stringify(price)); // Saving
 }
+
+	
 
 </script>
 </head>
 
-<body >
+<body onload="tester()" >
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -229,7 +311,6 @@ alert(cart);
 
     <!-- Page Content -->
     <div class="container">
-
         <div class="row" >
 
             <div class="col-md-3">
@@ -312,7 +393,11 @@ alert(cart);
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+<script>
+	document.getElementById("cart").innerHTML = "Cart("+Object.keys(cart).length+")";
+	
 
+</script>
 </body>
 
 </html>
